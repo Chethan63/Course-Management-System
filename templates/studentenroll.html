@@ -1,0 +1,49 @@
+<html>
+<head>
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/studentenroll1.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'css/studentenroll.css' %}">
+<link rel="stylesheet" type="text/js" href="{% static 'js/studentenroll.js' %}">
+<link rel="stylesheet" type="text/js" href="{% static 'js/studentenroll1.js' %}">
+<link rel="stylesheet" type="text/js" href="{% static 'js/studentenroll2.js' %}">
+</head>
+<body>
+<form name="myform" action="view" method="post">
+				{% csrf_token %}
+<div class="container">
+    <div class="row">
+        <div class="panel panel-primary filterable">
+            <div class="panel-heading">
+                <h3 class="panel-title">STUDENT DETAILS</h3>
+                <div class="pull-right">
+                    <button class="btn btn-default btn-xs btn-filter"><span class="glyphicon glyphicon-filter"></span> Filter</button>
+                </div>
+            </div>
+            <table class="table">
+                <thead>
+                    <tr class="filters">
+                        <th><input type="text" class="form-control" placeholder="reg" disabled></th>
+                        <th><input type="text" class="form-control" placeholder="name" disabled></th>
+                        <th><input type="text" class="form-control" placeholder="fathername" disabled></th>
+                        <th><input type="text" class="form-control" placeholder="contact" disabled></th>
+						<th><input type="text" class="form-control" placeholder="gender" disabled></th>
+						<th><input type="text" class="form-control" placeholder="address" disabled></th>
+                    </tr>
+                </thead>
+					{% for sts in res %}
+                <tbody>
+                 <tr>
+			<td>{{sts.0}}</td>
+			<td>{{sts.1}}</td>
+			<td>{{sts.2}}</td>
+			<td>{{sts.3}}</td>
+			<td>{{sts.4}}</td>
+			<td>{{sts.5}}</td>
+	</tr>
+                </tbody>
+					{% endfor %}
+            </table>
+        </div>
+    </div>
+</div>
+</body>

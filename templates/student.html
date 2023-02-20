@@ -1,0 +1,63 @@
+<html>
+<head>
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/newstudent1.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'css/newstudent.css' %}">
+<link rel="stylesheet" type="text/js" href="{% static 'js/newstudent.js' %}">
+<link rel="stylesheet" type="text/js" href="{% static 'js/newstudent1.js' %}">
+<link rel="stylesheet" type="text/js" href="{% static 'js/newstudent2.js' %}">
+</head>
+
+<body background="{% static 'image/c.jpg'%}">
+<div class="row">
+    <div class="col-md-6 col-sm-12 col-lg-6 col-md-offset-3">
+		<div class="panel panel-primary">
+			<div class="panel-heading">Enter Your Details Here
+			</div>
+			<div class="panel-body">
+				<form name="myform" action="register" method="post">
+				{% csrf_token %}
+					<div class="form-group">
+						<label for="myName">Register Number</label>
+						<input id="myName" name="reg" class="form-control" type="text" data-validation="required">
+						<span id="error_name" class="text-danger"></span>
+					</div>
+					<div class="form-group">
+						<label for="lastname">Name</label>
+						<input id="lastname" name="name" class="form-control" type="text" data-validation="email">
+						<span id="error_lastname" class="text-danger"></span>
+					</div>
+					<div class="form-group">
+						<label for="age">Father Name</label>
+						<input id="age" name="fathername"  class="form-control" type="text" min="1" >
+						<span id="error_age" class="text-danger"></span>
+					</div>
+					<div class="form-group">
+						<label for="dob">contact</label>
+						<input type="number" name="contact" id="dob" class="form-control">
+						<span id="error_dob" class="text-danger"></span>
+					</div>
+					<div class="form-group">
+						<label for="gender">Gender</label>
+						<select name="gender" id="gender" class="form-control">
+							<option selected>Male</option>
+							<option>Female</option>
+							<option>Other</option>
+						</select>
+						<span id="error_gender" class="text-danger"></span>
+					</div>
+					<div class="form-group">
+						<label for="disc">address</label>
+						<textarea class="form-control" name="address" rows="3"></textarea>
+					</div> 
+					
+					<button id="submit" type="submit" value="submit" class="btn btn-primary center">register</button>
+			
+				</form>
+
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+</html>
